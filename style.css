@@ -1,0 +1,139 @@
+header {
+    display: flex;
+    justify-content: center;
+    font-family: Host Grotesk;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+
+body {
+    background: url(/bg-art.png);
+    background-size: 100% auto;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+section {
+    justify-content: center;
+}
+
+.card {
+    height: 100px;
+    width: 300px;
+    background: url(/grandient.png);
+    border: 5px solid rgb(114, 112, 255);
+    border-radius: 50px;
+    color: white;
+    font-family: Host Grotesk;
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 4px 12px;
+}
+
+.card:hover {
+    border: 5px solid rgb(109, 80, 255);
+    background: linear-gradient(rgb(115, 99, 255), rgb(150, 152, 252));
+    animation: wiggle 2s linear infinite;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 6px 18px;
+}
+
+.card:active {
+    border: 5px solid rgb(60, 70, 155);
+    background: linear-gradient(to top, rgb(115, 99, 255), rgb(150, 152, 252));
+    transform: scale(1.1, 1.1);
+    transition: 1.2s;
+    font-size: 24px;
+    animation: none;
+    .name {
+        visibility: hidden;
+    }
+    .fullname {
+        visibility: visible;
+        font-weight: bold;
+    }
+}
+
+.fullname {
+    visibility: hidden;
+}
+
+footer {
+    text-align: center;
+    background-color: rgb(50, 50, 50);
+    width: 100%;
+    margin-bottom: 0;
+    font-family: Host Grotesk;
+    color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 319px) {
+    body {
+        visibility: hidden;
+        background: none;
+    }
+}
+
+@media (min-width: 320px) {
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    footer {
+        visibility: hidden;
+    }
+}
+
+@media (min-width: 768px) {
+    section {
+        display: grid;
+        grid-template-columns: 350px 300px;
+        grid-auto-rows: minmax(100px, auto);
+        gap: 20px;
+    }
+    footer {
+        visibility: visible;
+    }
+}
+
+@media (min-width: 1200px) {
+    section {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 350px 350px 300px;
+    }
+}
+
+@keyframes wiggle {
+    0%, 7% {
+    transform: rotateZ(0);
+    }
+    15% {
+    transform: rotateZ(-15deg);
+    }
+    20% {
+    transform: rotateZ(10deg);
+    }
+    25% {
+    transform: rotateZ(-10deg);
+    }
+    30% {
+    transform: rotateZ(6deg);
+    }
+    35% {
+    transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+    transform: rotateZ(0);
+    }
+}
